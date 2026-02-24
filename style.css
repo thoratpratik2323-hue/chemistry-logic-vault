@@ -42,7 +42,44 @@ body {
 
 header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+
+.chapter-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    scrollbar-width: none;
+}
+
+.chapter-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-chip {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-chip.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+}
+
+.nav-chip:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
 }
 
 .badge {

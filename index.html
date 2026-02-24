@@ -24,12 +24,26 @@
                 thinking only!</p>
         </header>
 
+        <!-- Chapter Navigation -->
+        <nav class="chapter-nav">
+            <button class="nav-chip active" onclick="loadChapter('Solutions')">Solutions</button>
+            <button class="nav-chip" onclick="loadChapter('Electrochemistry')">Electrochemistry</button>
+            <button class="nav-chip" onclick="loadChapter('Chemical Kinetics')">Kinetics</button>
+            <button class="nav-chip" onclick="loadChapter('d & f Block')">d & f Block</button>
+            <button class="nav-chip" onclick="loadChapter('Coordination Compounds')">Coordination</button>
+            <button class="nav-chip" onclick="loadChapter('Organic Chemistry (Combined)')">Organic</button>
+            <button class="nav-chip" onclick="loadChapter('Biomolecules')">Biomolecules</button>
+        </nav>
+
         <section class="logic-sections">
+            <!-- Questions will be injected here -->
+            <div id="questions-display" class="question-vault"></div>
+
             <!-- Assertion-Reason Section -->
             <div class="card">
                 <div class="card-header">
-                    <h2>Assertion-Reason Hacks</h2>
-                    <span class="badge secondary">100% Asked</span>
+                    <h2>Advanced Logic Hacks</h2>
+                    <span class="badge secondary">Board Strategy</span>
                 </div>
                 <div class="hacks-grid">
                     <div class="hack-item">
@@ -44,31 +58,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Question Bank -->
-            <div class="question-vault">
-                <h2>High-Yield Questions</h2>
-
-                <div class="q-card">
-                    <div class="q-label">Assertion-Reason</div>
-                    <p><b>Assertion:</b> Benzaldehyde is less reactive than acetaldehyde towards nucleophilic addition.
-                    </p>
-                    <p><b>Reason:</b> Resonance stabilization and steric hindrance of the bulky phenyl group reduce
-                        reactivty.</p>
-                    <button class="ans-trigger" onclick="toggleAns(this)">Show Verdict</button>
-                    <div class="ans-hidden"><b>Correct: (a)</b> <br>Dono points true hain aur Reason perfectly explain
-                        kar raha hai. Bulky benzene ring rasta rokti hai!</div>
-                </div>
-
-                <div class="q-card">
-                    <div class="q-label">Case Study Focus</div>
-                    <p><b>Case:</b> A solution of copper sulphate is electrolyzed using platinum electrodes. Write the
-                        reaction at cathode and why blue color fades.</p>
-                    <button class="ans-trigger" onclick="toggleAns(this)">Show Analysis</button>
-                    <div class="ans-hidden"><b>Analysis:</b> <br>Cathode pe \(Cu^{2+}\) reduce hokar \(Cu\) ban jayega.
-                        Blue color isliye fade hota hai kyunki \(Cu^{2+}\) ions khatam ho rahe hain solution se.</div>
-                </div>
-            </div>
         </section>
 
         <footer>
@@ -76,12 +65,59 @@
         </footer>
     </div>
 
+    <script src="questions.js"></script>
     <script>
         function toggleAns(btn) {
             const ans = btn.nextElementSibling;
             ans.classList.toggle('active');
             btn.innerText = ans.classList.contains('active') ? 'Hide Answer' : 'Show Answer';
         }
+
+        function loadChapter(chapterName) {
+            // Update UI chips
+            document.querySelectorAll('.nav-chip').forEach(btn => {
+                btn.classList.toggle('active', btn.innerText === chapterName || (chapterName === 'Solutions' && btn.innerText === 'Solutions'));
+            });
+
+            const container = document.getElementById('questions-display');
+            const data = logicData.find(d => d.chapter === chapterName);
+
+            if (!data) return;
+
+            container.innerHTML = `<h2>${chapterName} Mastery</h2>`;
+
+            data.questions.forEach(q => {
+                const card = document.createElement('div');
+                card.className = 'q-card fade-in';
+
+                if (q.type === 'Assertion-Reason') {
+                    card.innerHTML = `
+                        <div class="q-label">Assertion-Reason</div>
+                        <p><b>Assertion:</b> ${q.assertion}</p>
+                        <p><b>Reason:</b> ${q.reason}</p>
+                        <button class="ans-trigger" onclick="toggleAns(this)">Show Verdict</button>
+                        <div class="ans-hidden">
+                            <b>Verdict:</b> ${q.verdict} <br><br>
+                            <b>Logic:</b> ${q.explanation}
+                        </div>
+                    `;
+                } else {
+                    card.innerHTML = `
+                        <div class="q-label">Case Study</div>
+                        <p><b>Analysis Case:</b> ${q.case}</p>
+                        <button class="ans-trigger" onclick="toggleAns(this)">Show Analysis</button>
+                        <div class="ans-hidden">
+                             <b>Key Concept:</b> ${q.verdict} <br><br>
+                             <b>Explanation:</b> ${q.explanation}
+                        </div>
+                    `;
+                }
+                container.appendChild(card);
+            });
+        }
+
+        // Initial Load
+        window.onload = () => loadChapter('Solutions');
     </script>
 </body>
 
