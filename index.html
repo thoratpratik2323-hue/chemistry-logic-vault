@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Vault | Assertion & Case Study 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="glow-mesh"></div>
+
+    <div class="container">
+        <header>
+            <div class="badge">LOGICAL MASTERY 🧠</div>
+            <h1>The <span class="gradient-text">Logic Vault</span></h1>
+            <p class="subtitle">Crushing Assertion-Reason & Case Study patterns for the 2026 Board Exam. Strategic
+                thinking only!</p>
+        </header>
+
+        <section class="logic-sections">
+            <!-- Assertion-Reason Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Assertion-Reason Hacks</h2>
+                    <span class="badge secondary">100% Asked</span>
+                </div>
+                <div class="hacks-grid">
+                    <div class="hack-item">
+                        <div class="hack-title">Rule 1: Independent Check</div>
+                        <p>Pehle check karo Assertion true hai ya nahi. Phir check karo Reason true hai ya nahi. Dono
+                            galat hone ka chance kam hota hai.</p>
+                    </div>
+                    <div class="hack-item highlight">
+                        <div class="hack-title">Rule 2: The 'BECAUSE' Test</div>
+                        <p>Assertion read karo aur uske baad 'BECAUSE' laga kar Reason read karo. Agar sensible sounds
+                            kare, toh option (a) hai!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Bank -->
+            <div class="question-vault">
+                <h2>High-Yield Questions</h2>
+
+                <div class="q-card">
+                    <div class="q-label">Assertion-Reason</div>
+                    <p><b>Assertion:</b> Benzaldehyde is less reactive than acetaldehyde towards nucleophilic addition.
+                    </p>
+                    <p><b>Reason:</b> Resonance stabilization and steric hindrance of the bulky phenyl group reduce
+                        reactivty.</p>
+                    <button class="ans-trigger" onclick="toggleAns(this)">Show Verdict</button>
+                    <div class="ans-hidden"><b>Correct: (a)</b> <br>Dono points true hain aur Reason perfectly explain
+                        kar raha hai. Bulky benzene ring rasta rokti hai!</div>
+                </div>
+
+                <div class="q-card">
+                    <div class="q-label">Case Study Focus</div>
+                    <p><b>Case:</b> A solution of copper sulphate is electrolyzed using platinum electrodes. Write the
+                        reaction at cathode and why blue color fades.</p>
+                    <button class="ans-trigger" onclick="toggleAns(this)">Show Analysis</button>
+                    <div class="ans-hidden"><b>Analysis:</b> <br>Cathode pe \(Cu^{2+}\) reduce hokar \(Cu\) ban jayega.
+                        Blue color isliye fade hota hai kyunki \(Cu^{2+}\) ions khatam ho rahe hain solution se.</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>"Ishu, logic se chemistry asaan ho jati hai! ❤️" - Pratik</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleAns(btn) {
+            const ans = btn.nextElementSibling;
+            ans.classList.toggle('active');
+            btn.innerText = ans.classList.contains('active') ? 'Hide Answer' : 'Show Answer';
+        }
+    </script>
+</body>
+
+</html>
