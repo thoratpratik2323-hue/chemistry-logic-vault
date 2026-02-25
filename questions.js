@@ -90,20 +90,56 @@ const logicData = [
         ]
     },
     {
-        chapter: "Organic Chemistry (Combined)",
+        chapter: "Haloalkanes & Haloarenes",
         questions: [
             {
                 type: "Assertion-Reason",
-                assertion: "Phenol is more acidic than ethanol.",
-                reason: "Phenoxide ion is resonance stabilized while ethoxide ion is not.",
+                assertion: "Haloarenes are less reactive towards nucleophilic substitution than haloalkanes.",
+                reason: "In haloarenes, the C-X bond acquires partial double bond character due to resonance.",
                 verdict: "(a) Both A and R are true and R is correct explanation.",
-                explanation: "Resonance in phenoxide makes it easier to lose a proton."
+                explanation: "The partial double bond makes it harder to break compared to the single bond in haloalkanes."
             },
             {
                 type: "Case Study",
-                case: "Nucleophilic substitution in aryl halides is difficult. Give two reasons.",
-                verdict: "Resonance & Hybridization",
-                explanation: "1. Partial double bond character due to resonance. 2. sp2 hybridized carbon is more electronegative and holds the halogen tighter."
+                case: "Why is Chloroform stored in dark colored bottles?",
+                verdict: "Phosgene Formation",
+                explanation: "Chloroform oxidizes in presence of light and air to form a poisonous gas called Phosgene (COCl2)."
+            }
+        ]
+    },
+    {
+        chapter: "Aldehydes, Ketones & Acids",
+        questions: [
+            {
+                type: "Assertion-Reason",
+                assertion: "Aldehydes are more reactive than ketones towards nucleophilic addition.",
+                reason: "Two alkyl groups in ketones reduce the electrophilicity of the carbonyl carbon.",
+                verdict: "(a) Both A and R are true and R is correct explanation.",
+                explanation: "Ketones have more steric hindrance and +I effect from two alkyl groups, reducing reactivity."
+            },
+            {
+                type: "Case Study",
+                case: "Carboxylic acids do not give the characteristic reactions of carbonyl group. Why?",
+                verdict: "Resonance Effect",
+                explanation: "The lone pairs on the Oxygen of the -OH group are involved in resonance with the carbonyl group, making the carbon less electrophilic."
+            }
+        ]
+    },
+    {
+        chapter: "Amines",
+        questions: [
+            {
+                type: "Assertion-Reason",
+                assertion: "Aniline does not undergo Friedel-Crafts reaction.",
+                reason: "Aniline forms a salt with AlCl3 (Lewis Acid used in the reaction).",
+                verdict: "(a) Both A and R are true and R is correct explanation.",
+                explanation: "The NH2 group is basic and reacts with the catalyst, deactivating the ring."
+            },
+            {
+                type: "Case Study",
+                case: "Why is the pKb of aniline more than that of methylamine?",
+                verdict: "Basicity Factor",
+                explanation: "In aniline, the lone pair on nitrogen is delocalized over the benzene ring, making it less available for protonation."
             }
         ]
     },
