@@ -1,5 +1,23 @@
 const logicData = [
     {
+        chapter: "Solid State",
+        questions: [
+            {
+                type: "Assertion-Reason",
+                assertion: "Crystalline solids are anisotropic in nature.",
+                reason: "Some of their physical properties like electrical resistance or refractive index show different values when measured along different directions in the same crystal.",
+                verdict: "(a) Both A and R are true and R is correct explanation.",
+                explanation: "Anisotropy means properties change with direction, which is typical of ordered crystalline structures."
+            },
+            {
+                type: "Case Study",
+                case: "Why does NaCl crystal appear yellow sometimes?",
+                verdict: "F-centers",
+                explanation: "When NaCl crystals are heated in an atmosphere of sodium vapor, anion vacancies are created which are occupied by electrons (F-centers). These electrons absorb light and impart color."
+            }
+        ]
+    },
+    {
         chapter: "Solutions",
         questions: [
             {
@@ -50,6 +68,24 @@ const logicData = [
                 case: "Hydrolysis of ethyl acetate in presence of acid is called a pseudo-first-order reaction. Why?",
                 verdict: "Concentration Factor",
                 explanation: "Water is present in such large excess that its concentration remains constant during the reaction."
+            }
+        ]
+    },
+    {
+        chapter: "p-Block Elements",
+        questions: [
+            {
+                type: "Assertion-Reason",
+                assertion: "Nitrogen is less reactive at room temperature.",
+                reason: "Nitrogen has a high bond dissociation enthalpy due to triple bond presence.",
+                verdict: "(a) Both A and R are true and R is correct explanation.",
+                explanation: "Triple bond (N≡N) requires huge energy to break, making it inert at STP."
+            },
+            {
+                type: "Case Study",
+                case: "Why is H2O a liquid while H2S is a gas?",
+                verdict: "Hydrogen Bonding",
+                explanation: "Oxygen is highly electronegative and forms strong hydrogen bonds in water, leading to association. Sulfur is not enough electronegative."
             }
         ]
     },
