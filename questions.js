@@ -144,6 +144,24 @@ const logicData = [
         ]
     },
     {
+        chapter: "Alcohols, Phenols & Ethers",
+        questions: [
+            {
+                type: "Assertion-Reason",
+                assertion: "Phenols are more acidic than alcohols.",
+                reason: "Phenoxide ion is stabilized by resonance while alkoxide ion is not.",
+                verdict: "(a) Both A and R are true and R is correct explanation.",
+                explanation: "Resonance delocalizes the negative charge over the benzene ring, stabilizing the ion."
+            },
+            {
+                type: "Case Study",
+                case: "Ethers have lower boiling points than isomeric alcohols. Why?",
+                verdict: "Hydrogen Bonding",
+                explanation: "Alcohols form intermolecular hydrogen bonds, whereas ethers do not have H directly attached to O, so no H-bonding."
+            }
+        ]
+    },
+    {
         chapter: "Aldehydes, Ketones & Acids",
         questions: [
             {
